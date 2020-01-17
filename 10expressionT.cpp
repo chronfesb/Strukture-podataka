@@ -1,5 +1,5 @@
 /*10. Napisati program koji iz datoteke cita postfiks izraz i zatim stvara stablo proracuna. Iz
-gotovog stabla proraèuna upisati u datoteku infiks izraz.*/
+gotovog stabla proraÃ¨una upisati u datoteku infiks izraz.*/
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <stdlib.h>
@@ -68,7 +68,6 @@ int readFromFile(char *fileName, Position head)
 
 	while (!feof(f)) {
 		position q = treeAlocation();
-		if (q== NULL) return 1;
 		fscanf(f, " %s", q->operation);
 		if (!strcmp(q->operation, "+") || !strcmp(q->operation, "-") ||
 			!strcmp(q->operation, "*") || !strcmp(q->operation, "%")) 
