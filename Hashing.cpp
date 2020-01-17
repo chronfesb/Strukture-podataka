@@ -1,11 +1,11 @@
-/*Napisati kod koji za zadane podatke studenata (matièni broj, ime i prezime) pravi
+/*Napisati kod koji za zadane podatke studenata (matiÃ¨ni broj, ime i prezime) pravi
 hash tablicu sa zasebnim redovima. Tablica ima 11 mjesta, a funkcija za preslikavanje
-kljuè raèuna da se zbraja ASCII vrijednost prvih pet slova prezimena i zatim raèuna
-ostatak cjelobrojnog dijeljenja te vrijednosti s velièinom tablice. Studenti s istim
-kljuèem se pohranjuju u vezanu listu sortiranu po prezimenima i imenima.
-Kada se tablica izgradi treba ispisati cijelu tablicu (naglasiti na kojem kljuèu se nalaze
-koji podaci) te ponuditi moguænost da se za odreðenog studenta (prezime i ime) ispiše
-njegov matièni broj.*/
+kljuÃ¨ raÃ¨una da se zbraja ASCII vrijednost prvih pet slova prezimena i zatim raÃ¨una
+ostatak cjelobrojnog dijeljenja te vrijednosti s veliÃ¨inom tablice. Studenti s istim
+kljuÃ¨em se pohranjuju u vezanu listu sortiranu po prezimenima i imenima.
+Kada se tablica izgradi treba ispisati cijelu tablicu (naglasiti na kojem kljuÃ¨u se nalaze
+koji podaci) te ponuditi moguÃ¦nost da se za odreÃ°enog studenta (prezime i ime) ispiÅ¡e
+njegov matiÃ¨ni broj.*/
 
 #define _CRT_SECURE_NO_WARNINGS
 #include<stdio.h>
@@ -113,7 +113,6 @@ int insertToHash(pos p, pos hash[])
 	}
 	else if(compare(hash[index], p)>0) {
 		p->next=hash[index];
-		hash[index]->next=p;
 	}
 	else {
 		pos q=hash[index];
