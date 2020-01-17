@@ -37,10 +37,10 @@ int main()
 	char *name;
 	int i = -1;
 
-	name = (char*)malloc(21 * sizeof(char));
+	name = (char*)malloc(128 * sizeof(char));
 	root->child = NULL;
 	root->next= NULL;
-	root->name = (char*)malloc(5 * sizeof(char));
+	root->name = (char*)malloc(128 * sizeof(char));
 	strcpy(root->name, "root");
 	head->Next = AllocationStack();
 	head->Next->tree = root;
