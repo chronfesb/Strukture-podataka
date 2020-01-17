@@ -61,7 +61,6 @@ Position listAlocation()
 int readFromFile(char *fileName, Position head)
 {
 	if (head == NULL) return 1;
-	char buff[10];
 	int result;
 	FILE *f = fopen(fileName, "r");
 	if (f == NULL) return 1;
