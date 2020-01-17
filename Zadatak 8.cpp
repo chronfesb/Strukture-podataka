@@ -32,7 +32,7 @@ int GarbageCollector(Position);
 int main()
 {
 	Position root=(Position)malloc(sizeof(Tree));
-	Position curretDir = root;
+	Position currentDir = root;
 	position head = AllocationStack();
 	char *name;
 	int i = -1;
@@ -48,7 +48,7 @@ int main()
 
 	while (i != 0)
 	{
-		printf("\n\nNalazite se u %s direktoriju:\n", curretDir->name);
+		printf("\n\nNalazite se u %s direktoriju:\n", currentDir->name);
 		printf("Odaberite radnju:\n");
 		printf("1. md (Make directory)\n");
 		printf("2. cd (Change directory)\n");
@@ -63,20 +63,20 @@ int main()
 		case 1:
 			printf("md ");
 			scanf(" %s", name);
-			MakeDirectory(curretDir, name);
+			MakeDirectory(currentDir, name);
 			break;
 		case 2:
 			printf("cd ");
 			scanf(" %s", name);
-			curretDir = ChangeDirectory(curretDir, head, name);
+			currentDir = ChangeDirectory(currentDir, head, name);
 			break;
 		case 3:
 			printf("cd..\n");
-			curretDir = pop(head);
+			currentDir = pop(head);
 			break;
 		case 4:
 			printf("dir\n");
-			printDirectory(curretDir);
+			printDirectory(currentDir);
 			break;
 		case 0:
 			break;
@@ -152,9 +152,9 @@ int MakeDirectory(Position Tree, char* name)
 	return 0;
 }
 
-Position ChangeDirectory(Position curretDir, position stack, char* name)
+Position ChangeDirectory(Position currentDir, position stack, char* name)
 {
-	Position x = curretDir->child;
+	Position x = currentDir->child;
 
 	while (x != NULL && strcmp(x->name, name) != 0)
 		x = x->next;
@@ -162,10 +162,10 @@ Position ChangeDirectory(Position curretDir, position stack, char* name)
 	if (x == NULL)
 	{
 		printf("\nNe postoji taj direktorij!!\n");
-		return curretDir;
+		return currentDir;
 	}
 
-	push(curretDir, stack);
+	push(currentDir, stack);
 
 	return x;
 }
